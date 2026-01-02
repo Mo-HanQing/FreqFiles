@@ -14,6 +14,8 @@ import com.intellij.util.messages.MessageBusConnection;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -289,8 +291,8 @@ public class FileEditorListener implements FileEditorManagerListener {
             }
             
             String filePath = file.getPath();
-            java.nio.file.Path base = java.nio.file.Paths.get(basePath);
-            java.nio.file.Path filePathObj = java.nio.file.Paths.get(filePath);
+            Path base = Paths.get(basePath);
+            Path filePathObj = Paths.get(filePath);
             if (filePathObj.startsWith(base)) {
                 return base.relativize(filePathObj).toString().replace('\\', '/');
             }

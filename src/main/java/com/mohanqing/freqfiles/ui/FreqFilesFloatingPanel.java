@@ -37,6 +37,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -378,8 +380,8 @@ public class FreqFilesFloatingPanel {
             String basePath = project.getBasePath();
             if (basePath != null) {
                 try {
-                    java.nio.file.Path base = java.nio.file.Paths.get(basePath);
-                    java.nio.file.Path filePath = base.resolve(selected);
+                    Path base = Paths.get(basePath);
+                    Path filePath = base.resolve(selected);
                     file = VirtualFileManager.getInstance().findFileByNioPath(filePath);
                 } catch (Exception e) {
                     // 忽略异常，继续尝试其他方式
@@ -415,13 +417,13 @@ public class FreqFilesFloatingPanel {
         VirtualFile baseDir = null;
         String basePath = project.getBasePath();
         if (basePath != null) {
-            baseDir = VirtualFileManager.getInstance().findFileByNioPath(java.nio.file.Paths.get(basePath));
+            baseDir = VirtualFileManager.getInstance().findFileByNioPath(Paths.get(basePath));
         }
         // 如果项目根目录不存在，使用用户主目录
         if (baseDir == null) {
             String userHome = System.getProperty("user.home");
             if (userHome != null) {
-                baseDir = VirtualFileManager.getInstance().findFileByNioPath(java.nio.file.Paths.get(userHome));
+                baseDir = VirtualFileManager.getInstance().findFileByNioPath(Paths.get(userHome));
             }
         }
         
@@ -545,8 +547,10 @@ public class FreqFilesFloatingPanel {
         if (selected != null) {
             FreqFilesService service = FreqFilesService.getInstance(project);
             FrequentFilesState frequentState = service.getFrequentState();
-            // 从高频列表中排除该文件（但不删除统计，这样文件再次打开时仍会被统计）
-            frequentState.excludeFromFrequent(selected);
+            // 清除该文件的所有统计信息（点击次数、停留时间、最后访问时间）
+            // 同时从排除列表中移除（如果存在），这样文件重新打开时可以从零开始统计
+            frequentState.removeFileFrequency(selected);
+            frequentState.includeInFrequent(selected); // 确保从排除列表中移除
             refreshLists();
         }
     }
@@ -774,8 +778,8 @@ public class FreqFilesFloatingPanel {
         try {
             String basePath = project.getBasePath();
             if (basePath != null) {
-                java.nio.file.Path base = java.nio.file.Paths.get(basePath);
-                java.nio.file.Path file = java.nio.file.Paths.get(absolutePath);
+                Path base = Paths.get(basePath);
+                Path file = Paths.get(absolutePath);
                 if (file.startsWith(base)) {
                     return base.relativize(file).toString().replace('\\', '/');
                 }

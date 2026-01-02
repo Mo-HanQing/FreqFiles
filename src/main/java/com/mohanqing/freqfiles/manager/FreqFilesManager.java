@@ -6,6 +6,9 @@ import com.mohanqing.freqfiles.service.FreqFilesService;
 import com.mohanqing.freqfiles.state.FavoriteFilesState;
 import com.mohanqing.freqfiles.state.FrequentFilesState;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  * 文件频率管理器，提供文件操作的便捷方法
  */
@@ -96,8 +99,8 @@ public class FreqFilesManager {
         try {
             String basePath = project.getBasePath();
             if (basePath != null) {
-                java.nio.file.Path base = java.nio.file.Paths.get(basePath);
-                java.nio.file.Path file = java.nio.file.Paths.get(absolutePath);
+                Path base = Paths.get(basePath);
+                Path file = Paths.get(absolutePath);
                 if (file.startsWith(base)) {
                     return base.relativize(file).toString().replace('\\', '/');
                 }
