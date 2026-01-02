@@ -1,0 +1,203 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.mohanqing.FreqFiles</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>FreqFiles</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <!-- For individual developers, use your name or GitHub username, and link to your GitHub profile or personal website -->
+    <vendor url="https://github.com/Mo-HanQing">MoHanQing</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        <p>
+            <b>FreqFiles</b> - IntelliJ IDEA File Frequency Statistics Plugin
+        </p>
+        <p>
+            A powerful file management plugin for IntelliJ IDEA that helps you quickly access your favorite and frequently used files. Boost your productivity by organizing and accessing your most important files with ease.
+        </p>
+        <p>
+            <b>GitHub Repository:</b> <a href="https://github.com/Mo-HanQing/FreqFiles">https://github.com/Mo-HanQing/FreqFiles</a>
+        </p>
+        
+        <h3>Features</h3>
+        
+        <h4>🎯 Favorite Files</h4>
+        <ul>
+            <li>Manually select and save your frequently used files</li>
+            <li>Add files from both within and outside your project</li>
+            <li>Organize files with drag-and-drop reordering (up/down buttons)</li>
+            <li>Quick access with double-click to open files</li>
+            <li>Clear all favorite files with one click</li>
+        </ul>
+        
+        <h4>📊 Frequent Files</h4>
+        <ul>
+            <li>Automatically tracks file usage statistics</li>
+            <li>Records both click count and stay time for each file</li>
+            <li>Intelligently ranks files based on usage patterns</li>
+            <li>Displays top 50 most frequently accessed files</li>
+            <li>Shows statistics: file name, click count, and stay time (in English format: ms, s, m, h)</li>
+            <li>Remove files from frequent list (statistics remain for future tracking)</li>
+            <li>Clear all statistics with one click</li>
+        </ul>
+        
+        <h4>🎨 Floating Panel</h4>
+        <ul>
+            <li>Resizable floating panel for quick file access</li>
+            <li>Toggle with <code>Shift+Alt+F</code> keyboard shortcut</li>
+            <li>Stays visible while you work (doesn't close when clicking outside)</li>
+            <li>Split view: Favorite Files (left, 30%) and Frequent Files (right, 70%)</li>
+            <li>Draggable divider to adjust panel proportions</li>
+            <li>Scrollbars with thin design for better UI</li>
+            <li>Dynamic exit hint showing current shortcut</li>
+        </ul>
+        
+        <h4>⚙️ Customizable Settings</h4>
+        <ul>
+            <li>Fine-tune the ranking algorithm with weight ratio settings</li>
+            <li>Adjust the balance between click count weight and stay time weight</li>
+            <li>Real-time percentage display while adjusting</li>
+            <li>Sum of weights always equals 100%</li>
+            <li>Access via: <b>File → Settings → Tools → FreqFiles</b></li>
+        </ul>
+        
+        <h4>🔗 Context Menu Integration</h4>
+        <ul>
+            <li>Right-click any file in:
+                <ul>
+                    <li>Project view</li>
+                    <li>Editor tabs</li>
+                    <li>Editor content</li>
+                </ul>
+            </li>
+            <li>Quick option to add file to favorites</li>
+            <li>Integrated seamlessly into IDE menus</li>
+        </ul>
+        
+        <h4>💾 Persistent Storage</h4>
+        <ul>
+            <li>All favorite files and statistics are automatically saved</li>
+            <li>Data persists across IDE restarts</li>
+            <li>Stored in project configuration files</li>
+        </ul>
+        
+        <h3>Usage</h3>
+        
+        <h4>Opening the Floating Panel</h4>
+        <ol>
+            <li>Press <code>Shift+Alt+F</code> to toggle the floating panel<br>
+                Or use: <b>Tools → Toggle Quick File Panel</b></li>
+        </ol>
+        
+        <h4>Managing Favorite Files</h4>
+        <ol>
+            <li><b>Adding files</b>:
+                <ul>
+                    <li>Click the <b>+</b> button in the Favorite Files panel</li>
+                    <li>Select files from file chooser (supports files outside project)</li>
+                    <li>Or right-click any file → <b>Add to Favorite Files</b></li>
+                </ul>
+            </li>
+            <li><b>Removing files</b>:
+                <ul>
+                    <li>Select a file and click <b>-</b> button to remove</li>
+                    <li>Click the trash icon to clear all favorite files</li>
+                </ul>
+            </li>
+            <li><b>Reordering files</b>:
+                <ul>
+                    <li>Select a file and use <b>↑</b> (up) or <b>↓</b> (down) buttons</li>
+                </ul>
+            </li>
+            <li><b>Opening files</b>:
+                <ul>
+                    <li>Double-click any file in the list</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <h4>Viewing Frequent Files</h4>
+        <ol>
+            <li>The Frequent Files panel automatically displays your most-used files</li>
+            <li>Statistics shown for each file:
+                <ul>
+                    <li>Click count</li>
+                    <li>Stay time (formatted as: ms, s, m, h)</li>
+                </ul>
+            </li>
+            <li><b>Removing from list</b>:
+                <ul>
+                    <li>Select a file and click <b>-</b> button (statistics remain)</li>
+                    <li>Click the trash icon to clear all statistics</li>
+                </ul>
+            </li>
+            <li><b>Opening files</b>:
+                <ul>
+                    <li>Double-click any file in the list</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <h4>Configuring Weight Settings</h4>
+        <ol>
+            <li>Go to <b>File → Settings → Tools → FreqFiles</b></li>
+            <li>Adjust the slider to set the weight ratio:
+                <ul>
+                    <li><b>Click Count Weight</b>: How much click count affects ranking</li>
+                    <li><b>Stay Time Weight</b>: How much stay time affects ranking</li>
+                </ul>
+            </li>
+            <li>The sum always equals 100%</li>
+            <li>Default: 40% click count, 60% stay time</li>
+            <li>Changes apply immediately to the ranking algorithm</li>
+        </ol>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 启动活动 -->
+        <postStartupActivity
+                implementation="com.mohanqing.freqfiles.activity.FreqFilesStartupActivity"/>
+
+        <!-- 项目设置 -->
+        <projectConfigurable
+                parentId="tools"
+                provider="com.mohanqing.freqfiles.ui.FreqFilesSettingsConfigurableProvider"
+                id="FreqFiles.Settings"
+                displayName="FreqFiles"
+                nonDefaultProject="true"/>
+    </extensions>
+
+    <actions>
+        <!-- 添加到Project视图的右键菜单 -->
+        <action id="FreqFiles.AddToFavoriteFiles"
+                class="com.mohanqing.freqfiles.action.AddToFavoriteFilesAction"
+                text="%freqfiles.add.to.favorite"
+                description="%freqfiles.add.to.favorite.description">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+            <!-- 添加到编辑器标签栏右键菜单 -->
+            <add-to-group group-id="EditorTabPopupMenu" anchor="first"/>
+            <!-- 添加到编辑器内部右键菜单 -->
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+
+        <!-- 显示/隐藏悬浮面板的Action（切换模式） -->
+        <action id="FreqFiles.ShowFloatingPanel"
+                class="com.mohanqing.freqfiles.action.ShowFloatingPanelAction"
+                text="%freqfiles.toggle.panel"
+                description="%freqfiles.toggle.panel.description">
+            <keyboard-shortcut keymap="$default" first-keystroke="shift alt F"/>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

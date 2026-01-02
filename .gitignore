@@ -1,0 +1,121 @@
+# Gradle
+.gradle/
+build/
+out/
+bin/
+*.class
+
+# Local configuration files
+local.properties
+local.gradle.properties
+*.local
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IntelliJ Platform
+.intellijPlatform/
+idea-sandbox/
+
+# Feisuan (AI coding assistant)
+.feisuan/
+
+# Run configurations
+.run/
+
+# Gradle Wrapper (optional - usually committed, but can be ignored if you want)
+# Uncomment the following lines if you don't want to commit Gradle wrapper
+# gradle-wrapper.jar
+# gradle-wrapper.properties
+
+# Gradle cache
+.gradle/caches/
+.gradle/daemon/
+
+# Build reports
+build/reports/
+build/test-results/
+
+# Distribution
+build/distributions/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/shelf
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.local.xml
+
+# Package Files
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# Application specific
+*.pid
+*.seed
+*.pid.lock
+
+# IDE specific files
+.vscode/
+*.code-workspace
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics
+crashlytics.properties
+crashlytics-build.properties
+
+# Backup files
+*.bak
+*.backup
+*_backup
+*_old
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IntelliJ Platform specific
+.classpath
+.project
+.settings/
+
+# Generated files
+*.generated.*
+**/generated/
