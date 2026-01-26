@@ -2,9 +2,9 @@
 
 <a id="english"></a>
 
-# FreqFiles - Your Smart File Access Assistant for JetBrains
+# FreqFiles - Your Smart File Access Assistant for JetBrains IDEs
 
-**FreqFiles** is a powerful file management plugin for JetBrains that helps you quickly access your favorite and frequently used files. Boost your productivity by organizing and accessing your most important files with ease, either through a classic floating panel or an elegant floating ball.
+**FreqFiles** is a powerful file management plugin for JetBrains IDEs that helps you quickly access your favorite and frequently used files. Boost your productivity by organizing and accessing your most important files with ease, either through a classic floating panel or an elegant floating ball.
 
 <p align="center">
   <img src="docs/images/floating-ball-demo.gif" alt="Floating Ball Demo" width="760"/>
@@ -111,7 +111,7 @@
 
 ## 🔧 Installation
 1. **File → Settings → Plugins**
-2. JETBRAINS Marketplace → search "FreqFiles" → Install
+2. JetBrains Marketplace → search "FreqFiles" → Install
 3. Restart IDE
 
 ---
@@ -120,7 +120,7 @@
 
 # FreqFiles - 智能文件助手
 
-**FreqFiles** 是一款 JetBrains 插件，用来帮助你更快访问**常用文件**与**高频文件**。你既可以使用传统的悬浮面板，也可以使用更轻量的**悬浮球**来随时展开面板，提高日常开发效率。
+**FreqFiles** 是一款适用于 JetBrains 全家桶 的插件，用来帮助你更快访问**常用文件**与**高频文件**。你既可以使用传统的悬浮面板，也可以使用更轻量的**悬浮球**来随时展开面板，提高日常开发效率。
 
 <p align="center">
   <img src="docs/images/floating-ball-demo.gif" alt="悬浮球演示" width="760"/>
@@ -227,7 +227,7 @@
 
 ## 🔧 安装
 1. **File → Settings → Plugins**
-2. JETBRAINS Marketplace 搜索 **FreqFiles** 安装
+2. JetBrains Marketplace 搜索 **FreqFiles** 安装
 3. 重启 IDE
 
 ---
