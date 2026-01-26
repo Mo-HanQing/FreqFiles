@@ -111,7 +111,7 @@
 
 ## 🔧 Installation
 1. **File → Settings → Plugins**
-2. Marketplace → search "FreqFiles" → Install
+2. JETBRAINS Marketplace → search "FreqFiles" → Install
 3. Restart IDE
 
 ---
@@ -231,4 +231,5 @@
 3. 重启 IDE
 
 ---
+
 
